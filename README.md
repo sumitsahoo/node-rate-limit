@@ -1,5 +1,7 @@
 # 🚦 Express Rate Limit & Slow Down Example
 
+> **Reference:** [Securing APIs with Express Rate Limit and Slow Down (MDN Blog)](https://developer.mozilla.org/en-US/blog/securing-apis-express-rate-limit-and-slow-down/)
+
 This project demonstrates how to use rate limiting and speed limiting (slow down) in an Express.js application using the `express-rate-limit` and `express-slow-down` middleware.
 
 ## ⏳ What is Rate Limiting?
