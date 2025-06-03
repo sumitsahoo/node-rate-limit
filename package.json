@@ -1,0 +1,22 @@
+{
+  "name": "rate-limit",
+  "version": "1.0.0",
+  "description": "A sample node app with rate limit implementation",
+  "license": "MIT",
+  "author": "Sumit Sahoo",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0",
+    "express-slow-down": "^2.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
