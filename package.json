@@ -7,7 +7,7 @@
 	"type": "module",
 	"main": "app.js",
 	"scripts": {
-		"start": "pm2 start app.js --name rate-limit-app",
+		"start": "pm2 start app.js -i max --name rate-limit-app",
 		"dev": "nodemon app.js",
 		"format": "npx biome format ./ --write",
 		"lint": "npx biome lint ./ --apply",

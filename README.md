@@ -103,6 +103,18 @@ This project uses [PM2](https://pm2.keymetrics.io/) for advanced process managem
 
 For more, see the [PM2 documentation](https://pm2.keymetrics.io/docs/usage/quick-start/).
 
+## 🐳 Docker & Production Deployment
+
+> **Important:** Do **not** use PM2 or clustering inside Docker containers or on platforms like GCP Cloud Run. Run a single Node.js process per container. Let Docker or your cloud platform handle scaling and process management for best performance and reliability.
+
+**Recommended production start script for Docker:**
+```json
+"scripts": {
+  "start": "node app.js"
+}
+```
+
+
 ## 📁 Project Structure
 ```
 app.js           # Main Express server with rate limit and slow down
