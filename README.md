@@ -58,11 +58,50 @@ const speedLimiter = slowDown({
    ```sh
    npm install
    ```
-2. Start the server:
+2. Start the server in development mode (auto-reload):
+   ```sh
+   npm run dev
+   ```
+3. Start the server in production mode with PM2:
    ```sh
    npm start
    ```
-3. Open [http://localhost:3000](http://localhost:3000) in your browser.
+   This runs:
+   ```sh
+   pm2 start app.js --name rate-limit-app
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 🚀 Running & Monitoring with PM2
+
+This project uses [PM2](https://pm2.keymetrics.io/) for advanced process management and clustering in production environments.
+
+- **List all processes:**
+  ```sh
+  pm2 list
+  ```
+- **View logs:**
+  ```sh
+  pm2 logs rate-limit-app
+  ```
+- **Monitor resource usage (live):**
+  ```sh
+  pm2 monit
+  ```
+- **Stop the app:**
+  ```sh
+  pm2 stop rate-limit-app
+  ```
+- **Restart the app:**
+  ```sh
+  pm2 restart rate-limit-app
+  ```
+- **Delete the app from PM2:**
+  ```sh
+  pm2 delete rate-limit-app
+  ```
+
+For more, see the [PM2 documentation](https://pm2.keymetrics.io/docs/usage/quick-start/).
 
 ## 📁 Project Structure
 ```
