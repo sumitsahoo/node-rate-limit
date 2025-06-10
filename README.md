@@ -52,6 +52,19 @@ const speedLimiter = slowDown({
 - **delayMs**: Increase or decrease the delay per request.
 - **message**: Customize the response message for blocked requests.
 
+## 🧠 How Does express-rate-limit Work?
+
+The `express-rate-limit` middleware works by tracking requests from each client (typically by IP address) and enforcing limits based on a configurable time window. Here’s the core logic it implements:
+
+- **Request Counting:** For each incoming request, it identifies the client (by default, using the IP address) and increments a counter for that client.
+- **Time Window:** The counter is reset after a specified time window (`windowMs`).
+- **Limit Enforcement:** If the client’s request count exceeds the allowed maximum (`max`) within the window, further requests are blocked and a custom response (e.g., an error message) is sent.
+- **Custom Responses:** You can customize the response sent when the limit is exceeded (e.g., status code, message).
+- **Flexible Storage:** By default, it uses in-memory storage, but you can use external stores (like Redis) for distributed rate limiting.
+- **Key Generation:** You can customize how clients are identified (e.g., by user ID, API key, or IP address).
+
+This logic helps protect your API from abuse and ensures fair usage among clients.
+
 ## ▶️ How to Run
 
 1. Install dependencies:
